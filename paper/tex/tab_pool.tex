@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{The model pool: every model answered every prompt once (greedy decoding). Accuracy and cost are means over the test halves of 8 splits. Roles were assigned by us before running (by price and expected capability) and the base/strong pair was then chosen after looking at these numbers, so the pair selection used the same prompts that are evaluated later.}\label{tab:pool}
+\begin{tabular}{llrrrr}
+\toprule
+ & & \multicolumn{2}{c}{Full set} & \multicolumn{2}{c}{MMLU-Pro} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Model & Role in this paper & Acc.\ (\%) & USD/100 & Acc.\ (\%) & USD/100 \\
+\midrule
+Llama-3.1-8B-Instruct & probe (4-tier runs) & 34.9 & 0.005 & 35.7 & 0.003 \\
+Llama-3.3-70B-Instruct & 4-tier runs only & 61.4 & 0.016 & 62.2 & 0.010 \\
+gpt-oss-120b & base model & 79.3 & 0.016 & 76.2 & 0.011 \\
+gpt-oss-20b & probe partner & 73.2 & 0.017 & 70.0 & 0.013 \\
+Qwen3-235B-A22B-2507 & pool member & 76.8 & 0.061 & 73.5 & 0.028 \\
+Claude Sonnet 5.5 & strong model & 91.8 & 0.333 & 89.6 & 0.297 \\
+Claude Opus 5.5 & reference only & 94.5 & 0.738 & 93.0 & 0.638 \\
+\bottomrule
+\end{tabular}
+\end{table}

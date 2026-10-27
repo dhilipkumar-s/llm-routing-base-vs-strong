@@ -1,0 +1,14 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Reference policies on the full mixed set (mean of 8 splits).}\label{tab:ref_full}
+\begin{tabular}{lrrr}
+\toprule
+Policy & Acc.\ (\%) & USD/100 prompts & Savings vs.\ Sonnet (\%) \\
+\midrule
+Always gpt-oss-120b & 79.3 & 0.016 & 95.1 \\
+Always Claude Sonnet 5.5 & 91.8 & 0.333 & 0.0 \\
+Always Claude Opus 5.5 (reference) & 94.5 & 0.738 & -121.8 \\
+Oracle router & 93.8 & 0.084 & 74.8 \\
+\bottomrule
+\end{tabular}
+\end{table}

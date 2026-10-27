@@ -1,0 +1,14 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Reference policies on MMLU-Pro only (mean of 8 splits).}\label{tab:ref_mmlu}
+\begin{tabular}{lrrr}
+\toprule
+Policy & Acc.\ (\%) & USD/100 prompts & Savings vs.\ Sonnet (\%) \\
+\midrule
+Always gpt-oss-120b & 76.2 & 0.011 & 96.5 \\
+Always Claude Sonnet 5.5 & 89.6 & 0.297 & 0.0 \\
+Always Claude Opus 5.5 (reference) & 93.0 & 0.638 & -114.8 \\
+Oracle router & 92.1 & 0.073 & 75.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

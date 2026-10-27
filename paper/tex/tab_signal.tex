@@ -1,0 +1,27 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Signal quality of lightweight scorers for the pair used in the routing experiments, computed on all prompts (learned scorers use 5-fold out-of-fold scores; no train/test split). Spearman and the first AUC are against gpt-oss-120b's own failures; the second AUC is for ``needs Sonnet'' (gpt-oss-120b wrong, Sonnet right). Calls = model calls needed before the routing decision.}\label{tab:signal}
+\begin{tabular}{lcrrrrrr}
+\toprule
+ & & \multicolumn{3}{c}{Full set} & \multicolumn{3}{c}{MMLU-Pro} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Scorer & Calls & $\rho$ & AUC fail & AUC gain & $\rho$ & AUC fail & AUC gain \\
+\midrule
+\multicolumn{8}{l}{\emph{Prompt characteristics (read the prompt only)}} \\
+Prompt length & 0 & 0.24 & 0.67 & 0.68 & 0.20 & 0.64 & 0.68 \\
+Heuristic features & 0 & 0.03 & 0.52 & 0.54 & $-$0.07 & 0.45 & 0.48 \\
+TF-IDF ridge & 0 & 0.27 & 0.69 & 0.68 & 0.26 & 0.68 & 0.66 \\
+LLM judge & 1 & 0.11 & 0.58 & 0.59 & 0.10 & 0.57 & 0.57 \\
+\midrule
+\multicolumn{8}{l}{\emph{Model behaviour (needs model answers)}} \\
+Llama-3.1-8B output length & 1 & $-$0.12 & 0.42 & 0.45 & $-$0.05 & 0.47 & 0.46 \\
+Disagreement (gpt-oss-120b vs 20b) & 2 & 0.35 & 0.75 & 0.80 & 0.37 & 0.75 & 0.79 \\
+Self-consistency (3 votes) & 2 & 0.55 & 0.76 & 0.82 & 0.52 & 0.74 & 0.80 \\
+Combiner + samples + subject & 2--3 & 0.44 & 0.82 & 0.86 & 0.42 & 0.79 & 0.84 \\
+\midrule
+\multicolumn{8}{l}{\emph{References}} \\
+Oracle for this pair (not realisable) & -- & 0.44 & 0.82 & 1.00 & 0.43 & 0.79 & 1.00 \\
+Random scores & 0 & 0.03 & 0.52 & 0.50 & 0.03 & 0.52 & 0.50 \\
+\bottomrule
+\end{tabular}
+\end{table}

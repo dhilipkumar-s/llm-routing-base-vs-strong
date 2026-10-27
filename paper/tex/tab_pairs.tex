@@ -1,0 +1,16 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Other base/strong pairs at the 95\% target, full set. Each cell is lift over a random mix in points, then (savings relative to the strong model, splits at target out of 8). Mean over 8 splits. Self-consistency needs sampled answers, which we collected only for gpt-oss-120b. The disagreement probe pairs each base model with a partner chosen by us (gpt-oss-20b for gpt-oss-120b, gpt-oss-120b for Qwen3-235B, Llama-3.1-8B for Llama-3.3-70B and gpt-oss-20b). ``Best prompt-only'' is the best of prompt length, TF-IDF and heuristic features for that pair. Complete tables are in Appendix~\ref{app:all}.}\label{tab:pairs}
+\begin{tabular}{lllll}
+\toprule
+Base $\to$ strong & Oracle (ceiling) & Self-consistency & Disagreement & Best prompt-only \\
+\midrule
+gpt-oss-120b $\to$ Sonnet 5.5 & +3.7 (58\%, 5/8) & +3.3 (51\%, 8/8) & +2.1 (49\%, 5/8) & Length +2.3 \\
+gpt-oss-120b $\to$ Opus 5.5 & +5.8 (64\%, 5/8) & +3.7 (46\%, 4/8) & +2.6 (52\%, 2/8) & Length +2.4 \\
+Qwen3-235B $\to$ Sonnet 5.5 & +5.2 (44\%, 7/8) & n/a & +3.2 (37\%, 6/8) & Heuristic +1.1 \\
+Qwen3-235B $\to$ Opus 5.5 & +7.2 (50\%, 8/8) & n/a & +5.1 (49\%, 5/8) & Length +0.6 \\
+Llama-3.3-70B $\to$ Sonnet 5.5 & +7.1 (29\%, 7/8) & n/a & 0.0 (15\%, 5/8) & Heuristic +0.4 \\
+gpt-oss-20b $\to$ Sonnet 5.5 & +4.8 (45\%, 4/8) & n/a & 0.0 (23\%, 4/8) & Length +1.6 \\
+\bottomrule
+\end{tabular}
+\end{table}

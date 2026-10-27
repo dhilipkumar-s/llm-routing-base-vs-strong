@@ -1,0 +1,24 @@
+# Secrets: never commit these
+openrouter_key.txt
+*key*.txt
+.env
+.env.*
+!.env.example
+*.pem
+
+# Python / OS / LaTeX build files
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+analysis/*.pkl
+
+# large scratch outputs from re-runs
+runs/

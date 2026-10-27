@@ -1,0 +1,28 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Fresh-prompt results by benchmark at the 95\% target (thresholds fixed on the original prompts, one run). Escalated is the percentage of prompts sent to Sonnet; Cost is the router's cost as a percentage of always using Sonnet on those prompts. MATH-500 and GSM8K have only 7 and 6 base-model errors, so their rows are very noisy.}\label{tab:fresh_bench}
+\begin{tabular}{llrrrrr}
+\toprule
+Benchmark (n) & Router & Escalated (\%) & Accuracy (\%) & gpt-oss-120b & Sonnet & Cost (\%) \\
+\midrule
+MMLU-Pro (297) & Self-consistency & 21 & 82.5 & 76.4 & 88.2 & 42 \\
+ & Disagreement & 21 & 81.8 & 76.4 & 88.2 & 41 \\
+ & Embedding classifier & 45 & 84.5 & 76.4 & 88.2 & 52 \\
+ & Verbalised confidence & 32 & 82.2 & 76.4 & 88.2 & 53 \\
+ & Prompt length & 49 & 82.8 & 76.4 & 88.2 & 58 \\
+\addlinespace
+MATH-500 (217) & Self-consistency & 5 & 99.5 & 96.8 & 99.5 & 32 \\
+ & Disagreement & 6 & 99.5 & 96.8 & 99.5 & 26 \\
+ & Embedding classifier & 4 & 97.7 & 96.8 & 99.5 & 12 \\
+ & Verbalised confidence & 12 & 98.6 & 96.8 & 99.5 & 34 \\
+ & Prompt length & 3 & 97.2 & 96.8 & 99.5 & 12 \\
+\addlinespace
+GSM8K (100) & Self-consistency & 2 & 96.0 & 94.0 & 96.0 & 13 \\
+ & Disagreement & 1 & 95.0 & 94.0 & 96.0 & 6 \\
+ & Embedding classifier & 1 & 94.0 & 94.0 & 96.0 & 4 \\
+ & Verbalised confidence & 3 & 94.0 & 94.0 & 96.0 & 9 \\
+ & Prompt length & 1 & 93.0 & 94.0 & 96.0 & 5 \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}

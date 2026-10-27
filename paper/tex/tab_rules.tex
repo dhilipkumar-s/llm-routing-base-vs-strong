@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Effect of the threshold rule at the 95\% target (100 splits, full set). Each cell is savings (\%) / lift (pp) / share of splits in which the target was met. ``Target + 2 points'' picks the cheapest threshold reaching 97\% of Sonnet's training accuracy; ``upper confidence bound'' requires a one-sided 95\% normal upper bound on the training accuracy shortfall to stay within the allowed 5\%.}\label{tab:rules}
+\resizebox{\textwidth}{!}{\begin{tabular}{lcccc}
+\toprule
+Router & Paper rule (11-step grid) & Same rule, 101-step grid & Target + 2 points & Upper confidence bound \\
+\midrule
+Self-consistency (3 votes) & 49.3 / 3.0 / 98\% & 49.3 / 3.0 / 98\% & 2.9 / $-$0.6 / 98\% & 9.5 / $-$0.1 / 98\% \\
+Disagreement (120b vs 20b) & 45.8 / 1.6 / 65\% & 51.6 / 1.6 / 52\% & 26.4 / 0.4 / 91\% & 27.9 / 0.5 / 91\% \\
+Combiner + samples + subject & 41.0 / 1.5 / 91\% & 47.7 / 1.3 / 54\% & 35.3 / 1.6 / 92\% & 36.4 / 1.6 / 92\% \\
+Prompt length & 50.9 / 1.9 / 66\% & 55.8 / 1.9 / 55\% & 34.7 / 1.2 / 87\% & 36.4 / 1.3 / 86\% \\
+Oracle difficulty (pool share) & 58.0 / 3.6 / 89\% & 63.9 / 3.4 / 61\% & 52.2 / 3.7 / 93\% & 54.1 / 3.7 / 92\% \\
+Oracle for this pair & 79.6 / 8.1 / 100\% & 83.0 / 5.8 / 64\% & 80.8 / 7.3 / 89\% & 80.3 / 7.7 / 94\% \\
+Random scores & 32.8 / $-$0.1 / 69\% & 37.8 / $-$0.0 / 55\% & 23.5 / $-$0.0 / 92\% & 24.9 / $-$0.1 / 88\% \\
+\bottomrule
+\end{tabular}}
+\end{table}

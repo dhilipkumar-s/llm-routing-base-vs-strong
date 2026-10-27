@@ -1,0 +1,26 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Results by benchmark at the 95\% target (full set, 100 splits, paper threshold rule, prompts pooled by benchmark). Share escalated is the percentage of prompts sent to Sonnet; accuracy is the router's accuracy. Always-base and always-Sonnet accuracy are shown for reference.}\label{tab:bench}
+\begin{tabular}{llrrrrr}
+\toprule
+Benchmark (n) & Router & Escalated (\%) & Accuracy (\%) & gpt-oss-120b & Sonnet & Cost / Sonnet \\
+\midrule
+MMLU-Pro (597) & Self-consistency & 20 & 85.5 & 76.9 & 89.1 & 46\% \\
+ & Disagreement & 24 & 84.4 & 76.9 & 89.1 & 49\% \\
+ & Prompt length & 51 & 85.8 & 76.9 & 89.1 & 60\% \\
+\addlinespace
+AIME (60) & Self-consistency & 41 & 95.0 & 75.0 & 96.7 & 84\% \\
+ & Disagreement & 58 & 95.4 & 75.0 & 96.7 & 89\% \\
+ & Prompt length & 18 & 78.6 & 75.0 & 96.7 & 31\% \\
+\addlinespace
+MATH-500 (100) & Self-consistency & 6 & 100.0 & 98.0 & 100.0 & 26\% \\
+ & Disagreement & 11 & 99.3 & 98.0 & 100.0 & 29\% \\
+ & Prompt length & 8 & 98.9 & 98.0 & 100.0 & 20\% \\
+\addlinespace
+GSM8K (30) & Self-consistency & 5 & 96.7 & 93.3 & 100.0 & 18\% \\
+ & Disagreement & 0 & 93.3 & 93.3 & 100.0 & 6\% \\
+ & Prompt length & 0 & 93.3 & 93.3 & 100.0 & 4\% \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}

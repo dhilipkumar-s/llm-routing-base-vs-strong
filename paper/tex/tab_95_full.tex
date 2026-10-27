@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Routers at the 95\% operating point, full mixed set. Mean over 8 train/test splits (standard deviation in parentheses). Savings and accuracy difference are relative to always using Sonnet; ``Splits at target'' counts splits where test retention of Sonnet's accuracy met the target; lift is accuracy above a random mix of the two models at equal cost.}\label{tab:95_full}
+\begin{tabular}{lrrrrr}
+\toprule
+Router & Savings (\%) & Acc.\ diff (pp) & Retention (\%) & Splits at target & Lift (pp) \\
+\midrule
+Self-consistency (3 votes) & 50.6 (3.2) & -3.4 & 96.3 & 8/8 & 3.3 (0.8) \\
+Disagreement (120b vs 20b) & 48.7 (3.0) & -4.3 & 95.3 & 5/8 & 2.1 (0.9) \\
+Learned combiner & 49.0 (2.3) & -4.1 & 95.5 & 4/8 & 2.4 (0.6) \\
+Prompt length & 54.6 (13.9) & -5.1 & 94.5 & 3/8 & 2.3 (0.5) \\
+TF-IDF ridge & 46.7 (11.8) & -5.6 & 94.0 & 3/8 & 0.7 (0.6) \\
+Heuristic features & 29.5 (3.6) & -4.8 & 94.8 & 3/8 & -0.9 (1.1) \\
+Oracle difficulty (pool share) & 58.2 (3.2) & -4.0 & 95.6 & 5/8 & 3.7 (0.7) \\
+Random scores & 43.8 (10.8) & -5.9 & 93.6 & 1/8 & -0.1 (0.9) \\
+\bottomrule
+\end{tabular}
+\end{table}

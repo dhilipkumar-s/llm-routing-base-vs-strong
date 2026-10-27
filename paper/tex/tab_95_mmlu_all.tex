@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Complete version, including both combiner variants. Routers at the 95\% operating point, MMLU-Pro only. Mean over 8 train/test splits (standard deviation in parentheses). Savings and accuracy difference are relative to always using Sonnet; ``Splits at target'' counts splits where test retention of Sonnet's accuracy met the target; lift is accuracy above a random mix of the two models at equal cost.}\label{tab:95_mmlu_all}
+\begin{tabular}{lrrrrr}
+\toprule
+Router & Savings (\%) & Acc.\ diff (pp) & Retention (\%) & Splits at target & Lift (pp) \\
+\midrule
+Self-consistency (3 votes) & 56.6 (3.9) & -4.5 & 94.9 & 4/8 & 3.3 (0.8) \\
+Disagreement (120b vs 20b) & 54.4 (11.8) & -6.0 & 93.3 & 1/8 & 1.6 (1.4) \\
+Learned combiner & 49.6 (8.2) & -4.3 & 95.2 & 4/8 & 2.6 (1.0) \\
+Combiner + samples & 52.2 (2.9) & -5.2 & 94.1 & 1/8 & 2.0 (0.7) \\
+Combiner + samples + subject & 53.0 (3.0) & -5.5 & 93.9 & 1/8 & 1.9 (0.9) \\
+Prompt length & 53.6 (14.8) & -5.5 & 93.9 & 2/8 & 2.1 (1.4) \\
+TF-IDF ridge & 51.5 (11.3) & -6.0 & 93.3 & 2/8 & 1.1 (1.1) \\
+Heuristic features & 25.3 (7.1) & -4.6 & 94.9 & 5/8 & -1.0 (1.4) \\
+Oracle difficulty (pool share) & 57.0 (7.4) & -4.4 & 95.1 & 5/8 & 3.5 (0.9) \\
+Random scores & 26.7 (10.4) & -4.1 & 95.4 & 6/8 & -0.3 (1.1) \\
+\bottomrule
+\end{tabular}
+\end{table}

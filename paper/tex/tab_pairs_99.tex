@@ -1,0 +1,61 @@
+\begin{longtable}{lrrrrr}
+\caption{Routers for every base/strong pair at the 99\% target, full set. Mean over 8 splits (standard deviation in parentheses). Rows within a pair are sorted by lift. Self-consistency exists only for gpt-oss-120b.}\label{tab:pairs_99}\\
+\toprule
+Router & Savings (\%) & Acc.\ diff (pp) & Retention (\%) & At target & Lift (pp) \\
+\midrule
+\endfirsthead
+\toprule
+Router & Savings (\%) & Acc.\ diff (pp) & Retention (\%) & At target & Lift (pp) \\
+\midrule
+\endhead
+\multicolumn{6}{l}{\emph{gpt-oss-120b $\to$ Sonnet 5.5}} \\
+Oracle difficulty (pool share) & 33.7 (8.8) & $-$1.2 & 98.7 & 6/8 & +3.3 (0.6) \\
+Prompt length & 12.4 (6.8) & $-$0.8 & 99.1 & 5/8 & +0.9 (0.3) \\
+TF-IDF ridge & 14.9 (9.7) & $-$1.2 & 98.7 & 3/8 & +0.8 (0.5) \\
+Heuristic features & 7.0 (4.8) & $-$0.9 & 99.0 & 5/8 & $-$0.0 (0.6) \\
+Random scores & 5.7 (6.8) & $-$1.0 & 98.9 & 4/8 & $-$0.3 (0.6) \\
+Disagreement & 7.7 (7.0) & $-$1.3 & 98.6 & 2/8 & $-$0.4 (0.4) \\
+Self-consistency (3 votes) & -14.3 (0.6) & +0.0 & 100.0 & 8/8 & $-$1.9 (0.2) \\
+\midrule
+\multicolumn{6}{l}{\emph{gpt-oss-120b $\to$ Opus 5.5}} \\
+Oracle difficulty (pool share) & 37.2 (9.7) & $-$1.0 & 98.9 & 6/8 & +4.9 (1.0) \\
+TF-IDF ridge & 14.7 (7.7) & $-$1.3 & 98.6 & 3/8 & +1.1 (0.5) \\
+Prompt length & 12.5 (8.7) & $-$1.0 & 99.0 & 6/8 & +1.0 (0.5) \\
+Disagreement & 9.2 (4.5) & $-$1.1 & 98.9 & 2/8 & +0.4 (0.2) \\
+Heuristic features & 5.2 (2.1) & $-$0.6 & 99.3 & 7/8 & +0.2 (0.4) \\
+Random scores & 1.9 (3.5) & $-$0.4 & 99.5 & 6/8 & $-$0.2 (0.4) \\
+Self-consistency (3 votes) & -6.5 (0.3) & +0.0 & 100.0 & 8/8 & $-$1.0 (0.2) \\
+\midrule
+\multicolumn{6}{l}{\emph{Qwen3-235B $\to$ Sonnet 5.5}} \\
+Oracle difficulty (pool share) & 21.6 (7.8) & $-$0.7 & 99.2 & 5/8 & +3.3 (0.9) \\
+Prompt length & 8.9 (2.7) & $-$0.9 & 99.0 & 2/8 & +0.7 (0.3) \\
+Heuristic features & 7.0 (3.5) & $-$0.7 & 99.2 & 4/8 & +0.6 (0.2) \\
+TF-IDF ridge & 2.2 (2.4) & $-$0.3 & 99.7 & 7/8 & +0.1 (0.3) \\
+Disagreement & 6.5 (15.4) & $-$1.1 & 98.8 & 4/8 & $-$0.0 (1.9) \\
+Random scores & 1.0 (2.8) & $-$0.2 & 99.8 & 7/8 & $-$0.0 (0.1) \\
+\midrule
+\multicolumn{6}{l}{\emph{Qwen3-235B $\to$ Opus 5.5}} \\
+Oracle difficulty (pool share) & 25.9 (8.1) & $-$0.6 & 99.3 & 7/8 & +4.5 (1.4) \\
+Prompt length & 6.9 (2.9) & $-$0.4 & 99.5 & 7/8 & +0.9 (0.4) \\
+Heuristic features & 5.0 (3.4) & $-$0.7 & 99.3 & 6/8 & +0.3 (0.2) \\
+TF-IDF ridge & 2.1 (2.9) & $-$0.2 & 99.8 & 6/8 & +0.2 (0.4) \\
+Random scores & 0.0 (0.0) & +0.0 & 100.0 & 8/8 & +0.0 (0.0) \\
+Disagreement & 2.0 (2.8) & $-$0.9 & 99.0 & 6/8 & $-$0.6 (0.4) \\
+\midrule
+\multicolumn{6}{l}{\emph{Llama-3.3-70B $\to$ Sonnet 5.5}} \\
+Oracle difficulty (pool share) & 18.5 (5.0) & $-$0.9 & 99.0 & 3/8 & +5.0 (1.4) \\
+Heuristic features & 2.2 (1.9) & $-$0.5 & 99.5 & 7/8 & +0.2 (0.2) \\
+Random scores & 0.0 (0.0) & +0.0 & 100.0 & 8/8 & +0.0 (0.0) \\
+TF-IDF ridge & 1.2 (2.2) & $-$0.5 & 99.5 & 6/8 & $-$0.1 (0.2) \\
+Prompt length & 0.6 (1.8) & $-$0.4 & 99.6 & 7/8 & $-$0.2 (0.6) \\
+Disagreement & -3.3 (3.9) & $-$1.0 & 98.9 & 5/8 & $-$2.1 (0.3) \\
+\midrule
+\multicolumn{6}{l}{\emph{gpt-oss-20b $\to$ Sonnet 5.5}} \\
+Oracle difficulty (pool share) & 23.6 (3.7) & $-$0.9 & 99.0 & 4/8 & +3.7 (0.5) \\
+Prompt length & 5.9 (0.9) & $-$0.3 & 99.7 & 8/8 & +0.9 (0.2) \\
+Disagreement & 2.7 (2.1) & $-$0.4 & 99.5 & 7/8 & +0.1 (0.2) \\
+TF-IDF ridge & 3.4 (4.6) & $-$0.6 & 99.3 & 6/8 & +0.0 (0.4) \\
+Heuristic features & 0.8 (1.5) & $-$0.2 & 99.8 & 7/8 & $-$0.0 (0.1) \\
+Random scores & 3.6 (5.1) & $-$0.8 & 99.1 & 5/8 & $-$0.1 (0.3) \\
+\bottomrule
+\end{longtable}

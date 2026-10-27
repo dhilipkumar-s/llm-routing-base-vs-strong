@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{Routers at the 95\% target over 100 random 50/50 splits (full set, the paper's threshold rule). Intervals are 95\% prompt-level bootstrap intervals (4000 draws) on each prompt's average result over the splits in which it was in the test half. Held = share of splits in which test retention met 95\%. Savings are relative to always using Sonnet.}\label{tab:ci}
+\begin{tabular}{lrrrr}
+\toprule
+Router & Savings (\%) [95\% CI] & Lift (pp) [95\% CI] & Retention (\%) & Held \\
+\midrule
+Self-consistency (3 votes) & 48.9 [43.2, 54.8] & 2.8 [1.5, 4.2] & 96.8 & 98\% \\
+Disagreement (120b vs 20b) & 45.7 [40.6, 51.2] & 1.5 [0.2, 2.7] & 95.7 & 65\% \\
+Combiner + samples + subject & 40.9 [35.2, 46.9] & 1.4 [0.2, 2.7] & 96.3 & 91\% \\
+Prompt length & 50.3 [46.0, 54.4] & 1.8 [0.6, 3.1] & 95.3 & 66\% \\
+TF-IDF ridge & 42.4 [39.4, 45.6] & 1.1 [0.1, 2.0] & 95.7 & 67\% \\
+Heuristic features & 26.7 [23.2, 30.4] & $-$0.7 [$-$1.9, 0.5] & 95.8 & 70\% \\
+LLM judge & 21.2 [18.5, 24.1] & $-$1.2 [$-$2.3, $-$0.2] & 95.9 & 51\% \\
+\midrule
+Oracle difficulty (pool share; paper's earlier ceiling) & 58.0 [53.0, 63.1] & 3.5 [2.1, 4.9] & 96.4 & 89\% \\
+Oracle for this pair (base wrong, Sonnet right) & 79.6 [75.5, 83.4] & 8.1 [6.7, 9.4] & 98.5 & 100\% \\
+Random scores & 32.7 [32.0, 33.4] & $-$0.2 [$-$0.4, $-$0.0] & 95.5 & 69\% \\
+\bottomrule
+\end{tabular}
+\end{table}
